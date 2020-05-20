@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Route, Link, Switch} from 'react-router-dom'
+// import logo from './logo.svg';
+import './myStyle.css';
+import TopList from './TopList';
+import InsideList from './InsideList';
+import OutsideList from './OutsideList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload....
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+          <ul>
+            <li><Link to='/'class="active">Home Top 10</Link></li>
+            <li><Link to='/intu'>ในมหาวิทยาลัย</Link></li>
+            <li><Link to='/outtu'>นอกมหาวิทยาลัย</Link></li>
+            <li><Link to='/other'>อื่นๆ</Link></li>
+          </ul>
+      <Switch>
+        <Route path='/' exact component={TopList} />
+        <Route path='/intu' component={InsideList} />
+        <Route path='/outtu' component={OutsideList} />
+        <Route path='/other' component={()=><h1>อื่นๆ</h1>} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
