@@ -10,13 +10,13 @@ function App() {
   return (
     <BrowserRouter>
           <ul>
-            <li><Link to='/'class="active">Home Top 10</Link></li>
+            <li><Link to='/home'class="active">Home Top 10</Link></li>
             <li><Link to='/intu'>ในมหาวิทยาลัย</Link></li>
             <li><Link to='/outtu'>นอกมหาวิทยาลัย</Link></li>
             <li><Link to='/other'>อื่นๆ</Link></li>
           </ul>
       <Switch>
-        <Route path='/' exact component={TopList} />
+        <Route path='/home' exact component={TopList} />
         <Route path='/intu' component={InsideList} />
         <Route path='/outtu' component={OutsideList} />
         <Route path='/other' component={()=><h1>อื่นๆ</h1>} />
