@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import img1 from './img/1.jpg';
+
 
 const TopList = () => {
 
@@ -14,7 +16,7 @@ const TopList = () => {
         let showRes = () =>{
             let detailBody = resItem.map(e=>{
                 return <div class="gallery">
-                            <a href={img1}><img src={img1} alt="res1" width="100" height="500"></img></a>
+                            <Link to='/Restaurant'><img src={img1} alt="res1" width="100" height="500"></img></Link>
                             <div class="desc">
                                 <p>ชื่อร้าน: {e.res_name}</p>
                                 <p>คะแนน: {e.res_rate}</p>

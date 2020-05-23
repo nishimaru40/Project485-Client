@@ -9,6 +9,7 @@ import OutsideList from './OutsideList';
 import signIn from './components/signIn';
 import signUp from './components/signUp';
 import profileStatus from './components/profileStatus';
+import Restaurant from './Restaurant';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path='/other' component={() => <h1>อื่นๆ</h1>} />
         <Route path='/signUp' component={signUp} />
         <Route path='/signIn' component={signIn} />
+        <Route path='/Restaurant' component={Restaurant} />
       </Switch>
     </BrowserRouter>
   );
