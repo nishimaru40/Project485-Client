@@ -1,14 +1,14 @@
-/*--------------------- about nav bar ---------------------*/
 body {
     font-size: 28px;
 }
-  
+
+/*--------------------- about nav bar ---------------------*/
 ul.nav-bar {
     position: -webkit-sticky ; /*Safari*/
     position: sticky;
     top: 0;
     list-style-type: none;
-    margin: 0;
+    margin-top: 50px;
     padding: 0;
     overflow: hidden;
     background-color: #333;
@@ -47,6 +47,11 @@ h1 {
     text-align: center;
 }
 
+li#right-li{
+    float:right;
+    background-color: rgb(61, 64, 224);
+}
+
 /*--------------------- about image table ---------------------*/
 div.galleries {
     display: grid;
@@ -79,3 +84,27 @@ div.gallery {
     font-family: 'Chonburi', cursive;
     font-size: 15px;
   }
+
+/*--------------------- about sign in , sign up ---------------------*/
+
+  form.SignIn ,form.SignUp{
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 100px;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+  }
+
+  form.SignUp{
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 50px;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+  }
+
+  div.form-group{
+    text-align: left;
+  }
+
+ 
