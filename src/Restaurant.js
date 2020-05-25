@@ -1,7 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import img1 from './img/1.jpg';
 
 const Restaurant = ({ match }) => {
+    const [comments, setComments] = useState([{
+        rating: "4/5",
+        feedback: "Very Good"
+    },
+    {
+        rating: "3/5",
+        feedback: "Good"
+    },
+    {
+        rating: "2/5",
+        feedback: "Not Bad"
+    },]);
+    const [feedback, setFeedback] = useState("");
+    const [rating, setRating] = useState("");
+
+    let commentList = comments.map(function (comment) {
+        return <div>
+            <p>{comment.rating}</p>
+            <p>{comment.feedback}</p>
+            <hr></hr>
+        </div>;
+    })
+
+    function handleSubmit(event) {
+        event.preventDefault();
+    }
+
     return (
         <div>
             <h1>ร้าน</h1>
@@ -30,12 +57,23 @@ const Restaurant = ({ match }) => {
                         </div>
                         <div class="right-info">
                             <div class="comment">
-                                <p>#1 : สุดยอด</p>
-                                <p>#2 : เยี่ยม</p>
+                                {commentList}
                             </div>
-                            <div class="comment">
-                                <p>******</p>
-                                <p>comment field</p>
+
+                            <div class="feedback">
+                                <form onSubmit={event => handleSubmit(event)}>
+                                    <textarea placeholder="Comment" value={feedback} onChange={event => setFeedback(event.target.value)} style={{ "min-height": "50px" }} rows="3"></textarea>
+                                    <br></br>
+                                    <select value={rating} onChange={event => setRating(event.target.value)}>
+                                        <option selected value="0"></option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                    <input type="submit" value="Submit" style={{ margin: "10px" }} />
+                                </form>
                             </div>
                         </div>
                     </div>
