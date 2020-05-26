@@ -13,6 +13,18 @@ const SignUp = () => {
     const [pass, setPass] = useState("");
     const [formData, updateFormData] = useState(initialFormData);
 
+    const unameChange = (e) => {
+        setUname(e.target.value);
+    };
+
+    const emailChange = (e) => {
+        setEmail(e.target.value);
+    };
+
+    const passChange = (e) => {
+        setPass(e.target.value);
+    };
+
     const handleSubmit = (e) => {
         updateFormData({
             username: uname,
@@ -45,17 +57,17 @@ const SignUp = () => {
 
             <div className="form-group">
                 <label>User name</label>
-                <input type="text" className="form-control" placeholder="User name" onChange={event => setUname(event.target.value)} />
+                <input type="text" className="form-control" placeholder="User name" onChange={unameChange} />
             </div>
 
             <div className="form-group">
                 <label>Email address</label>
-                <input type="email" className="form-control" placeholder="Enter email" onChange={event => setEmail(event.target.value)} />
+                <input type="email" className="form-control" placeholder="Enter email" onChange={emailChange} />
             </div>
 
             <div className="form-group">
                 <label>Password</label>
-                <input type="password" className="form-control" placeholder="Enter password" onChange={event => setPass(event.target.value)} />
+                <input type="password" className="form-control" placeholder="Enter password" onChange={passChange} />
             </div>
 
             <button type="submit" className="btn btn-primary btn-block">Sign Up</button><br></br>
