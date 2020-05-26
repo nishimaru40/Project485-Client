@@ -1,110 +1,174 @@
 body {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 /*--------------------- about nav bar ---------------------*/
 ul.nav-bar {
-    position: -webkit-sticky ; /*Safari*/
-    position: sticky;
-    top: 0;
-    list-style-type: none;
-    margin-top: 50px;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+  position: -webkit-sticky; /*Safari*/
+  position: sticky;
+  top: 0;
+  list-style-type: none;
+  margin-top: 50px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
-  
+
 li.nav-item {
-    float: left;
-    font-family: 'Kanit', sans-serif;
+  float: left;
+  font-family: "Kanit", sans-serif;
 }
-  
+
 li.nav-item a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 20px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
 }
-  
+
 li.nav-item a:hover {
-    background-color: #111;
+  background-color: #111;
 }
-  
+
 .active {
-    background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 /*--------------------- about header ---------------------*/
 h1 {
-    text-align: center;
-    font-family: 'Chonburi', cursive;
-    font-size: 50px;
+  text-align: center;
+  font-family: "Chonburi", cursive;
+  font-size: 50px;
 }
 
-.header{
-    text-align: center;
+.header {
+  text-align: center;
 }
 
-li#right-li{
-    float:right;
-    background-color: rgb(61, 64, 224);
+li#right-li {
+  float: right;
+  background-color: rgb(61, 64, 224);
 }
 
 /*--------------------- about image table ---------------------*/
 div.galleries {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
 }
 
 div.gallery {
-    margin: 55px;
-    border: 1px solid #ccc;
-    width: 300px;
-  }
-  
-  div.gallery:hover {
-    border: 1px solid #777;
-  }
-  
-  div.gallery img {
-    width: 100%;
-    height: auto;
-  }
-  
-  div.desc {
-    padding: 15px;
-    text-align: center;
-  }
+  margin: 55px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
 
-  p {
-    text-align: center;
-    font-family: 'Chonburi', cursive;
-    font-size: 15px;
-  }
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-family: "Chonburi", cursive;
+  font-size: 15px;
+}
 
 /*--------------------- about sign in , sign up ---------------------*/
 
-  form.SignIn ,form.SignUp{
-    margin-left: 300px;
-    margin-right: 300px;
-    padding: 100px;
-    text-align: center;
-    font-family: 'Kanit', sans-serif;
-  }
+form.SignIn,
+form.SignUp {
+  margin-left: 300px;
+  margin-right: 300px;
+  padding: 100px;
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+}
 
-  form.SignUp{
-    margin-left: 300px;
-    margin-right: 300px;
-    padding: 50px;
-    text-align: center;
-    font-family: 'Kanit', sans-serif;
-  }
+form.SignUp {
+  margin-left: 300px;
+  margin-right: 300px;
+  padding: 50px;
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+}
 
-  div.form-group{
-    text-align: left;
-  }
+div.form-group {
+  text-align: left;
+}
 
- 
+.comment {
+  border-color: #2196F3!important;
+  color: #000!important;
+  background-color: #ddffff!important;
+  border-left: 6px solid #ccc!important;
+  padding: 0.01em 16px;
+  margin: 10px;
+}
+
+.comment p {
+  text-align: left;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.feedback {
+  padding: 0.01em 16px;
+  margin: 10px;  
+}
+
+.feedback textarea {
+  width: 100%;
+}
+
+/* Container for flexboxes */
+.rest-info {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+.left-info {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  padding: 20px;
+}
+
+.left-info img {
+  width: 100%;
+}
+
+/* Style the content */
+.right-info {
+  -webkit-flex: 5;
+  -ms-flex: 5;
+  flex: 5;
+  padding: 10px;
+}
+.right-info img {
+  margin: auto;
+  width: 90%;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}

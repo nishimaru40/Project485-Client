@@ -5,26 +5,28 @@ import img1 from './img/1.jpg';
 
 const TopList = () => {
 
-    const [restaurant,setRes] = useState([]);
-        useEffect(()=>{
+    const [restaurant, setRes] = useState([]);
+    useEffect(() => {
         fetch('/home')
-        .then(res => res.json())
-        .then(res => setRes(res));
-    },[restaurant]);
+            .then(res => res.json())
+            .then(res => setRes(res));
+    }, [restaurant]);
 
     const resItem = restaurant;
-        let showRes = () =>{
-            let detailBody = resItem.map(e=>{
-                return <div class="gallery">
-                            <Link to='/Restaurant'><img src={img1} alt="res1" width="100" height="500"></img></Link>
-                            <div class="desc">
-                                <p>ชื่อร้าน: {e.res_name}</p>
-                                <p>คะแนน: {e.res_rate}</p>
-                            </div>
-                        </div>
-            })
-           return detailBody;
-        }
+    let showRes = () => {
+        let detailBody = resItem.map(e => {
+            return <div class="gallery">
+                <Link to='/Restaurant/res_id'>
+                    <img src={img1} alt="res1" width="100" height="500"></img>
+                    <div class="desc">
+                        <p>ชื่อร้าน: {e.res_name}</p>
+                        <p>คะแนน: {e.res_rate}</p>
+                    </div>
+                </Link>
+            </div>
+        })
+        return detailBody;
+    }
 
 
 
@@ -32,7 +34,17 @@ const TopList = () => {
         <>
             <h1>TOP 10 ร้านอาหารดีเด่น ประจำสัปดาห์</h1>
             <div class="galleries">
-                {showRes()}  
+                {/* {showRes()}   */}
+
+                <div class="gallery">
+                    <Link to='/Restaurant/res_id'>
+                        <img src={img1} alt="res1" width="100" height="500"></img>
+                        <div class="desc">
+                            <p>ชื่อร้าน: A</p>
+                            <p>คะแนน: 5</p>
+                        </div>
+                    </Link>
+                </div>
             </div>
         </>
     )

@@ -34,7 +34,7 @@ function App() {
         <Route path='/other' component={() => <h1>อื่นๆ</h1>} />
         <Route path='/signUp' component={signUp} />
         <Route path='/signIn' component={signIn} />
-        <Route path='/Restaurant' component={Restaurant} />
+        <Route path='/Restaurant/:id' component={Restaurant} />
       </Switch>
     </BrowserRouter>
   );
