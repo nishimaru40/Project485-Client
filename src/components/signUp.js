@@ -1,19 +1,14 @@
 import React from "react";
 
-const SignUp = ()=> {
+const signUp = ()=> {
     
         return (
             <form class="SignUp">
                 <h3>สมัครสมาชิก</h3>
 
                 <div className="form-group">
-                    <label>First name</label>
-                    <input type="text" className="form-control" placeholder="First name" />
-                </div>
-
-                <div className="form-group">
-                    <label>Last name</label>
-                    <input type="text" className="form-control" placeholder="Last name" />
+                    <label>User name</label>
+                    <input type="text" className="form-control" placeholder="User name" />
                 </div>
 
                 <div className="form-group">
@@ -35,4 +30,4 @@ const SignUp = ()=> {
     
 }
 
-export default SignUp;
+export default signUp;
