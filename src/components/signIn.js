@@ -32,7 +32,10 @@ const SignIn = () => {
 
         fetch('/api/user/signIn', {
             method: 'POST',
-            body: JSON.stringify(formData),
+            body: JSON.stringify({
+                email: email,
+                password: pass
+            }),
             headers: new Headers({
                 'Content-Type': 'application/json',
             })
