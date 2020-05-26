@@ -25,25 +25,25 @@ const SignIn = () => {
         updateFormData({
             email: email,
             password: pass
-        }).then(
-            // ... submit to API or something
-
-            fetch('/api/user/signIn', {
-                method: 'POST',
-                body: JSON.stringify(formData),
-                headers: new Headers({
-                    'Content-Type': 'application/json',
-                })
-            }).then(res => res.json())
-                .catch(error => {
-                    console.error('Error:', error);
-                })
-                .then(res => {
-                    console.log('Success:', res);
-                })
-        )
+        })
         e.preventDefault()
         console.log(formData);
+        // ... submit to API or something
+
+        fetch('/api/user/signIn', {
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+            })
+        }).then(res => res.json())
+            .catch(error => {
+                console.error('Error:', error);
+            })
+            .then(res => {
+                console.log('Success:', res);
+            })
+
     };
 
 
