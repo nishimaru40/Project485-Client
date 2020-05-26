@@ -26,12 +26,12 @@ const SignUp = () => {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault()
         updateFormData({
             username: uname,
             email: email,
             password: pass
         })
+        e.preventDefault()
         console.log(formData);
         // ... submit to API or something
 
