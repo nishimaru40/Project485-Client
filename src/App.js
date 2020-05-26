@@ -10,6 +10,8 @@ import signIn from './components/signIn';
 import signUp from './components/signUp';
 import profileStatus from './components/profileStatus';
 import Restaurant from './Restaurant';
+import AppAddmin from './components/admin/AppAddmin'
+
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
         <Route path='/signUp' component={signUp} />
         <Route path='/signIn' component={signIn} />
         <Route path='/Restaurant/:id' component={Restaurant} />
+        <div><Route path='/AppAddmin' component={AppAddmin} /></div>
+        
       </Switch>
     </BrowserRouter>
   );
