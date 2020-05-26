@@ -13,14 +13,6 @@ const SignIn = () => {
     const [pass, setPass] = useState("");
     const [formData, updateFormData] = useState(initialFormData);
 
-    const emailChange = (e) => {
-        setEmail(e.target.value);
-    };
-
-    const passChange = (e) => {
-        setPass(e.target.value);
-    };
-
     const handleSubmit = (e) => {
         updateFormData({
             email: email,
@@ -32,10 +24,7 @@ const SignIn = () => {
 
         fetch('/api/user/signIn', {
             method: 'POST',
-            body: JSON.stringify({
-                email: email,
-                password: pass
-            }),
+            body: JSON.stringify(formData),
             headers: new Headers({
                 'Content-Type': 'application/json',
             })
@@ -58,13 +47,13 @@ const SignIn = () => {
             <div className="form-group">
                 <label>Email address</label>
                 <input type="email" className="form-control" placeholder="Enter email"
-                    onChange={emailChange} />
+                    onChange={event => setEmail(event.target.value)} />
             </div>
 
             <div className="form-group">
                 <label>Password</label>
                 <input type="password" className="form-control" placeholder="Enter password"
-                    onChange={passChange} />
+                    onChange={event => setPass(event.target.value)} />
             </div>
 
             <div className="form-group">

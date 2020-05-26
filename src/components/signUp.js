@@ -13,18 +13,6 @@ const SignUp = () => {
     const [pass, setPass] = useState("");
     const [formData, updateFormData] = useState(initialFormData);
 
-    const unameChange = (e) => {
-        setUname(e.target.value);
-    };
-
-    const emailChange = (e) => {
-        setEmail(e.target.value);
-    };
-
-    const passChange = (e) => {
-        setPass(e.target.value);
-    };
-
     const handleSubmit = (e) => {
         updateFormData({
             username: uname,
@@ -37,11 +25,7 @@ const SignUp = () => {
 
         fetch('/api/user/signUp', {
             method: 'POST',
-            body: JSON.stringify({
-                username: uname,
-                email: email,
-                password: pass
-            }),
+            body: JSON.stringify(formData),
             headers: new Headers({
                 'Content-Type': 'application/json',
             })
@@ -61,17 +45,17 @@ const SignUp = () => {
 
             <div className="form-group">
                 <label>User name</label>
-                <input type="text" className="form-control" placeholder="User name" onChange={unameChange} />
+                <input type="text" className="form-control" placeholder="User name" onChange={event => setUname(event.target.value)} />
             </div>
 
             <div className="form-group">
                 <label>Email address</label>
-                <input type="email" className="form-control" placeholder="Enter email" onChange={emailChange} />
+                <input type="email" className="form-control" placeholder="Enter email" onChange={event => setEmail(event.target.value)} />
             </div>
 
             <div className="form-group">
                 <label>Password</label>
-                <input type="password" className="form-control" placeholder="Enter password" onChange={passChange} />
+                <input type="password" className="form-control" placeholder="Enter password" onChange={event => setPass(event.target.value)} />
             </div>
 
             <button type="submit" className="btn btn-primary btn-block">Sign Up</button><br></br>
